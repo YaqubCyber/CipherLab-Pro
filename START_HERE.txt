@@ -1,0 +1,20 @@
+CIPHERLAB PRO — ONE-FOLDER PUBLISH GUIDE
+
+1. Extract this ZIP file once.
+2. Open the extracted CipherLab-Pro folder.
+3. Right-click an empty area and choose "Open Git Bash here".
+4. Run this single command:
+
+   bash PUBLISH_TO_GITHUB.sh
+
+5. If GitHub asks you to sign in, complete the browser sign-in.
+6. When the script says SUCCESS, open:
+   https://github.com/YaqubCyber/CipherLab-Pro
+
+IMPORTANT:
+- This package is a fresh project folder. It does not include the old local files.
+- The script connects this folder to your EXISTING GitHub repository and pushes
+  the new files as a commit on top of the existing main branch history.
+- It does not create a second GitHub repository.
+- Do not run the script from another folder.
+- Do not put passwords, tokens, or private keys in this project.

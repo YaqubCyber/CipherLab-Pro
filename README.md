@@ -1,9 +1,15 @@
 # CipherLab Pro
+
 ### Classical Cryptography Studio
 
-A desktop learning application built with **Python** and **Tkinter** for demonstrating classical encryption and decryption techniques through a clean graphical interface.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![GUI](https://img.shields.io/badge/GUI-Tkinter-2E8B57)
+![Project](https://img.shields.io/badge/Project-Educational-7B61A8)
+![Tests](https://img.shields.io/badge/Tests-13%20passing-success)
 
-> **Academic project** by **Aqoub Ismail Sawlah (عقوب إسماعيل صولة)**  
+A desktop application built with **Python** and **Tkinter** for demonstrating classical encryption and decryption algorithms through a graphical interface.
+
+> **Created by Yaqub Ismail Solan (يعقوب إسماعيل صولان)**  
 > Third-year Engineering Student · Al-Razi University · Yemen
 
 ---
@@ -12,19 +18,19 @@ A desktop learning application built with **Python** and **Tkinter** for demonst
 
 CipherLab Pro brings nine classical cipher techniques into one local desktop workspace. Select an algorithm, enter its key or parameters, choose encryption or decryption, and inspect or export the result.
 
-The application is intended for **education and classroom demonstrations**. It is not designed to protect real-world confidential information.
+This project is intended for **education and classroom demonstrations**. Classical ciphers are not suitable for protecting modern confidential information.
 
 ## Features
 
-- Dark desktop interface with button-based algorithm selection.
-- Encryption and decryption modes.
+- Dark Tkinter desktop interface.
 - Nine classical cipher implementations.
+- Encryption and decryption modes.
 - Key hints and parameter validation.
-- Demo examples for each algorithm.
+- Demonstration examples.
 - Copy, swap, and export result actions.
 - Operation counter and local processing history.
-- Runs locally without an internet connection.
-- Automated unit tests for core cipher behavior.
+- Local processing; no internet connection is required.
+- Automated unit tests for the cipher functions.
 
 ## Supported algorithms
 
@@ -33,25 +39,24 @@ The application is intended for **education and classroom demonstrations**. It i
 | 1 | Caesar Cipher | Integer shift |
 | 2 | Additive Cipher | Integer shift |
 | 3 | Multiplicative Cipher | Integer relatively prime to 26 |
-| 4 | Affine Cipher | `a,b` where `gcd(a, 26) = 1` |
+| 4 | Affine Cipher | `a,b`, where `gcd(a, 26) = 1` |
 | 5 | Vigenère Cipher | English keyword |
 | 6 | Auto-Key Vigenère Cipher | Initial English keyword |
-| 7 | Playfair Cipher | English keyword; combines I/J |
+| 7 | Playfair Cipher | English keyword; I/J share one cell |
 | 8 | Hill Cipher (2×2) | Four integers: `a,b,c,d` |
 | 9 | Keyless Transposition (Reversal) | No key |
 
-**Implementation note:** The project’s “Keyless Transposition” operation reverses the cleaned letter sequence. It is a simple educational reversal operation, not a general columnar transposition cipher.
+**Implementation clarification:** The operation named “Keyless Transposition” reverses the cleaned letter sequence. It is a simple educational reversal operation, not a general columnar transposition cipher.
 
 ## Requirements
 
-- Python 3.10 or newer (the project uses only Python's standard library).
-- Tkinter, which is included with many Python installations. On some Linux distributions it must be installed separately.
-
-No third-party Python packages are required.
+- Python 3.10 or newer.
+- Tkinter. It is included with many Python installations; some Linux distributions package it separately.
+- No third-party Python packages are required.
 
 ## Run the application
 
-1. Install Python 3.10+.
+1. Install Python 3.10 or newer.
 2. Download or clone this repository.
 3. Open a terminal in the project directory.
 4. Run:
@@ -62,7 +67,7 @@ python main.py
 
 On some systems, use `python3 main.py`.
 
-## Run tests
+## Run the tests
 
 From the project root:
 
@@ -70,57 +75,57 @@ From the project root:
 python -m unittest discover -s tests -v
 ```
 
-The test suite checks encryption/decryption round trips, invalid key handling, the algorithm registry, and Playfair's prepared-text behavior.
+The test suite checks encryption/decryption round trips, invalid keys, the nine-algorithm registry, and prepared Playfair text behavior.
 
 ## How to use
 
-1. Launch the application with `python main.py`.
-2. Select a cipher from the left sidebar.
+1. Launch the application.
+2. Select a cipher from the sidebar.
 3. Enter the required key or parameters shown in the key hint.
-4. Paste or type text in the input panel.
+4. Enter or paste the input text.
 5. Select **ENCRYPT** or **DECRYPT**.
 6. Click **RUN OPERATION**.
-7. Copy, swap, or export the output as needed.
+7. Copy, swap, or export the result as needed.
 
 ## Educational notes and limitations
 
 - Classical ciphers are historically important but are not secure by modern standards.
 - Base64 is an encoding scheme, **not encryption**.
-- Playfair decryption returns the prepared letter pairs. It does not automatically remove filler `X` characters or reconstruct omitted spaces.
+- Playfair decryption returns prepared letter pairs; it does not automatically remove filler `X` characters or restore omitted spaces.
 - Hill Cipher uses a 2×2 key matrix and requires an invertible matrix modulo 26.
-- The application processes text locally; it does not send input to a server.
-
-**Do not use this application to protect passwords, personal data, financial information, or other sensitive information.**
+- The application processes text locally and does not send input to a server.
+- Do not use this application to protect passwords, personal data, financial information, or other sensitive information.
 
 ## Project structure
 
 ```text
 CipherLab-Pro/
-├── main.py
-├── Ciphers-2.py
-├── README.md
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── tests/
+│   └── test_ciphers.py
 ├── .gitignore
-└── tests/
-    └── test_ciphers.py
+├── CONTRIBUTING.md
+├── Ciphers-2.py
+├── CHANGELOG.md
+├── README.md
+└── main.py
 ```
 
 ## Author
 
-**Aqoub Ismail Sawlah (عقوب إسماعيل صولة)**  
+**Yaqub Ismail Solan (يعقوب إسماعيل صولان)**  
 Third-year Engineering Student  
-**Al-Razi University — Yemen**
-
-- GitHub: [Add your GitHub profile URL]
-- Email: [Add a public contact email if you want to share one]
+**Al-Razi University · Yemen**
 
 ## Future improvements
 
-- Add screenshots and a short demo GIF.
-- Add step-by-step explanations for each cipher.
-- Add a dedicated result history viewer.
-- Add input validation and clearer algorithm-specific help in the interface.
-- Add support for configurable alphabets and additional classical ciphers.
+- Add verified application screenshots and a short demonstration GIF.
+- Add step-by-step visual explanations for each cipher.
+- Expand automated tests and improve algorithm-specific validation.
+- Add more classical cipher demonstrations.
 
 ---
 
-*Created as an educational university project. Contributions and learning-focused feedback are welcome.*
+*An educational university project. Feedback and learning-focused contributions are welcome.*

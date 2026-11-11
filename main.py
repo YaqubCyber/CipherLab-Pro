@@ -482,9 +482,10 @@ class CipherApp(tk.Tk):
             "Important: Base64 is encoding, not encryption. Classical ciphers\n"
             "are mainly useful for learning cryptography concepts.\n\n"
             "All processing is performed locally; no network connection is\n"
-            "required by this application.\\n\\n"
-            "Student Project Author:\\n"
-            "Aqoub Ismail Sawlah | Al-Razi University, Yemen\\n"
+            "required by this application.\n\n"
+            "Student Project Author:\n"
+            "Yaqub Ismail Solan (يعقوب إسماعيل صولان)\n"
+            "Al-Razi University | Yemen\n"
             "Third-year Engineering Student"
         )
         tk.Label(win, text=body, justify="left", bg=self.BG, fg=self.MUTED,
